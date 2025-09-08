@@ -1,0 +1,26 @@
+{
+  "name": "ex02-express",
+  "version": "1.0.0",
+  "description": "exercicio 2 express com modularização",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node api/index.js"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "postgres"
+  ],
+  "author": "pedro delmiro",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "@babel/cli": "^7.28.3",
+    "@babel/core": "^7.28.4",
+    "@babel/node": "^7.28.0",
+    "@babel/preset-env": "^7.28.3",
+    "nodemon": "^3.1.10"
+  }
+}
