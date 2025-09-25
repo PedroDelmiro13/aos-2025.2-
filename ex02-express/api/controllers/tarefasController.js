@@ -1,11 +1,17 @@
 import {tarefas} from "../models/tarefa.js";
 import {v4 as uuidv4} from "uuid";
 
-const getTasks = (req, res) =>{
-    res.json(tarefas)
+export const getTasks = (req, res) =>{
+    try{
+        if(tarefas.length === 0){
+            throw new Error ("Tarefa nao encontrada");
+        }res.json(tarefas)
+    }catch(e){
+        res.status(404).json({error: e.message});
+    }
 };
 
-const getTaskById = (req, res) =>{
+export const getTaskById = (req, res) =>{
     try{
         const {taskId} = req.params;
         const task = tarefas.find(t =>t.id === taskId);
@@ -19,7 +25,7 @@ const getTaskById = (req, res) =>{
     
 }
 
-const createTask = (req, res) => {
+export const createTask = (req, res) => {
     try{
         if(!req.body.description){
             throw new Error("Precisa de descrição");
@@ -42,7 +48,7 @@ const createTask = (req, res) => {
     }
 };
 
-const updatedTask = (req, res) => {
+export const updatedTask = (req, res) => {
    try{
 
     const {taskId} = req.params;
@@ -68,7 +74,7 @@ const updatedTask = (req, res) => {
    }
 };
 
-const deleteTask = (req, res) => {
+export const deleteTask = (req, res) => {
     try{
         const {taskId} = req.params;
         const index = tarefas.findIndex(t => t.id === taskId);

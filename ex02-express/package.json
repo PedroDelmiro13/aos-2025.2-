@@ -4,7 +4,7 @@
   "description": "exercicio 2 express com modularização",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --exec babel-node api/index.js"
+    "start": "set PORT=8080 && nodemon --exec babel-node api/index.js"
   },
   "keywords": [
     "node",
@@ -19,10 +19,12 @@
     "@babel/node": "^7.28.0",
     "@babel/preset-env": "^7.28.3",
     "cors": "^2.8.5",
+    "curl": "^0.1.4",
     "dotenv": "^17.2.2",
     "express": "^5.1.0",
     "nodemon": "^3.1.10",
     "pg": "^8.16.3",
+    "router": "^2.2.0",
     "sequelize": "^6.37.7",
     "uuid": "^13.0.0"
   }

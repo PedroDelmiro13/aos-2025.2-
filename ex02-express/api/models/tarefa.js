@@ -1,2 +1,1 @@
-const tarefas = [];
-export default tarefas;
+export const tarefas = [];
